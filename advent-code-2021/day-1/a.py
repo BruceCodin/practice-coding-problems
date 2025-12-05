@@ -1,5 +1,6 @@
 """
 Python code solves advent-code-2021: day 1 sonor sweep (part 1)
+https://adventofcode.com/2021/day/1
 """
 
 def read_input(filename: str) -> list[str]:
@@ -7,6 +8,7 @@ def read_input(filename: str) -> list[str]:
     with open(filename, 'r') as f:
         return f.readlines()
     
+
 def count_increment(list_input:list[str]) -> int: 
     """ Count how many times a depth measurement increases from the previous one. """
     pass 
