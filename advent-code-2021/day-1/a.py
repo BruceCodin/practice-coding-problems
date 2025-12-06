@@ -11,7 +11,19 @@ def read_input(filename: str) -> list[str]:
 
 def count_increment(list_input:list[str]) -> int: 
     """ Count how many times a depth measurement increases from the previous one. """
-    pass 
+    if not list_input:
+        return 0
+
+    count_result = 0
+
+    for i in range(len(list_input)):
+        if i == 0:
+            continue
+
+        if int(list_input[i]) > int(list_input[i-1]):
+            count_result += 1
+    
+    return count_result
 
 
 if __name__ == "__main__":
