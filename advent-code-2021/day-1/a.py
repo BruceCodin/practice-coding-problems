@@ -27,4 +27,6 @@ def count_increment(list_input:list[str]) -> int:
 
 
 if __name__ == "__main__":
-    pass 
+    day_1_input = read_input('input.txt')
+
+    print(count_increment(day_1_input))
