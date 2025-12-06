@@ -14,13 +14,13 @@ def count_increment(list_input:list[str]) -> int:
     if not list_input:
         return 0
 
+    numbers = [int(x) for x in list_input]
+
     count_result = 0
 
-    for i in range(len(list_input)):
-        if i == 0:
-            continue
+    for i in range(1, len(list_input)):
 
-        if int(list_input[i]) > int(list_input[i-1]):
+        if numbers[i] > numbers[i-1]:
             count_result += 1
     
     return count_result
