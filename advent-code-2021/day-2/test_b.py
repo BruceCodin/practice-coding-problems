@@ -1,7 +1,7 @@
 """ pytest test file for day-1: a """
 #pylint: skip-file
 
-from a import parse_command, get_horizontal_depth, calculate_product
+from b import parse_command, get_horizontal_depth, calculate_product
 import pytest 
 
 class TestParseCommand:
@@ -20,7 +20,8 @@ class TestGetHorizontalDepth:
     @pytest.mark.parametrize(
     "lines, expected",
     [
-        (["forward 5","up 7","down 3"], (5, -4)),
+        (["forward 5"], (5, 0)),
+        (["forward 5","down 5","forward 8"], (13, 40)),
     ])
 
     def test_get_horizontal_depth(self, lines, expected):
