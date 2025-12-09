@@ -1,4 +1,4 @@
-""" pytest test file for day-1: a """
+""" pytest test file for day-2: a """
 #pylint: skip-file
 
 from a import parse_command, get_horizontal_depth, calculate_product
