@@ -12,7 +12,7 @@ def parse_lines(input_lines: list[str]) -> list[str]:
     """Parse list of lines each line, strip and clean each line."""
     return [line.strip() for line in input_lines]
 
-def most_common_bit(clean_lines: list[str], index: int,mode: str) -> int:
+def most_common_bit(clean_lines: list[str], index: int,mode: str) -> str:
     """Return the most common bit at most left position (signficant bit)"""
     num_lines = len(clean_lines)
 
