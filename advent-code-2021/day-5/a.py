@@ -2,6 +2,10 @@
 Python code solves advent-code-2021: Day 5: Hydrothermal Venture (Part 1)
 https://adventofcode.com/2021/day/5
 """
+# You can use a pythonic libary , from collections, this avoids needing to use a dict to count
+# from collections import Counter
+# counts = Counter(points)
+# return sum(v > 1 for v in counts.values())
 
 def read_input(filename: str) -> list[str]:
     """Read input txt file and return list of str inputs."""
@@ -12,12 +16,12 @@ def parse_lines(input_lines: list[str]) -> list[str]:
     """Parse list of lines each line, strip and clean each line."""
     return [line.strip() for line in input_lines]
 
-def return_coordinates(lines: list[str]) -> list[str]:
+def return_coordinates(lines: list[str]) -> list[list[str]]:
     """Return list of coordinates from parsed lines
     '0,9 -> 5,9' into ['0', '9', '5', '9']"""
     return [line.replace(" -> ", ",").split(",") for line in lines]
 
-def check_ver_hor(cords: str) -> bool:
+def check_ver_hor(cords: list[str]) -> bool:
     """Checks if coordinates are vertical or horizontal"""
     return True if cords[0] == cords[2] or cords[1] == cords[3] else False
 
