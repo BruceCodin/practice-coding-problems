@@ -6,7 +6,7 @@ import pytest
 # test_day06.py
 import pytest
 
-from a import conv_str_int, simulate_days, count_fish
+from a import parse_lines, conv_str_int, simulate_days, count_fish
 
 
 EXAMPLE_LINES = ["3,4,3,1,2\n"]
@@ -14,10 +14,12 @@ EXAMPLE_LINES = ["3,4,3,1,2\n"]
 
 class TestConvStrInt:
     def test_converts_csv_line_to_ints(self):
-        assert conv_str_int(EXAMPLE_LINES) == [3, 4, 3, 1, 2]
+        example = parse_lines(EXAMPLE_LINES)
+        assert conv_str_int(example) == [3, 4, 3, 1, 2]
 
     def test_handles_trailing_newline_and_whitespace(self):
-        assert conv_str_int([" 3,4,3,1,2  \n"]) == [3, 4, 3, 1, 2]
+        example = parse_lines([" 3,4,3,1,2  \n"])
+        assert conv_str_int(example) == [3, 4, 3, 1, 2]
 
 
 class TestSimulateDays:
